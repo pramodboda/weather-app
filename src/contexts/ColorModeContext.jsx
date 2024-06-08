@@ -30,6 +30,13 @@ export const ColorModeContextProvider = ({ children }) => {
         },
         components: {
           // Name of the component
+          MuiCardContent: {
+            root: {
+              "&:last-child": {
+                paddingBottom: 0,
+              },
+            },
+          },
           MuiButtonBase: {
             defaultProps: {
               // The props to change the default for.

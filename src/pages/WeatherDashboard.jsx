@@ -15,8 +15,10 @@ const windContent = (
   <Box display="flex" justifyContent="space-between">
     <div>
       <Typography variant="body2">Wind Speed</Typography>
+      <Typography variant="body2">34</Typography>
       <hr />
       <Typography variant="body2">Wind Gusts</Typography>
+      <Typography variant="body2">64</Typography>
     </div>
     <div>
       <Typography variant="body2">Wind Direction</Typography>
@@ -40,22 +42,39 @@ export default function Home() {
                 </Grid>
 
                 <Grid item xs={12} sm={3}>
-                  <CommonCard name="UV Index" value="8" />
+                  <CommonCard
+                    name="UV Index"
+                    value="8"
+                    msg="well meaning and kindly. a benevolent smile"
+                  />
                 </Grid>
                 <Grid item xs={12} sm={3}>
-                  <CommonCard name="Feels Like" value="22" />
+                  <CommonCard
+                    name="Feels Like"
+                    value="22"
+                    msg="well meaning and kindly. a benevolent smile"
+                  />
                 </Grid>
                 <Grid item xs={12} sm={3}>
-                  <CommonCard name="Visibility" value="22" />
+                  <CommonCard
+                    name="Visibility"
+                    value="22"
+                    msg="well meaning and kindly. a benevolent smile"
+                  />
                 </Grid>
                 <Grid item xs={12} sm={3}>
-                  <CommonCard name="Humidity" value="62%" />
+                  <CommonCard
+                    name="Humidity"
+                    value="62%"
+                    msg="well meaning and kindly. a benevolent smile"
+                  />
                 </Grid>
                 <Grid item xs={12} sm={3}>
                   <CommonCard
                     name="Air Quality"
                     value="35"
                     valueDescription="Good"
+                    msg="well meaning and kindly. a benevolent smile"
                   />
                 </Grid>
                 <Grid item xs={12} sm={3}>
@@ -63,6 +82,7 @@ export default function Home() {
                     name="sunset and sunrise"
                     value="35"
                     valueDescription="Good"
+                    msg="well meaning and kindly. a benevolent smile"
                   />
                 </Grid>
                 <Grid item xs={12} sm={3}>
@@ -70,6 +90,7 @@ export default function Home() {
                     name="pressure"
                     value="35"
                     valueDescription="Good"
+                    msg="well meaning and kindly. a benevolent smile"
                   />
                 </Grid>
               </Grid>
