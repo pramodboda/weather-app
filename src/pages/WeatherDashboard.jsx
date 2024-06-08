@@ -10,7 +10,9 @@ import Grid from "@mui/material/Grid";
 import CommonCard from "../components/CommonCard/CommonCard";
 import CurrentWeatherCard from "../components/CurrentWeatherCard/CurrentWeatherCard";
 
-import CompassIcon from "../assets/icons/compass.svg";
+import CompassIcon from "../components/Icons/Compass";
+// import Compass from "../components/Icons/Compass.jsx";
+
 const windContent = (
   <Box display="flex" justifyContent="space-between">
     <div>
