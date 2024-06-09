@@ -11,7 +11,20 @@ import CommonCard from "../components/CommonCard/CommonCard";
 import CurrentWeatherCard from "../components/CurrentWeatherCard/CurrentWeatherCard";
 
 import CompassIcon from "../components/Icons/Compass";
+import Logo from "../components/Logo/Logo";
+import Clock from "../components/Clock/Clock";
 // import Compass from "../components/Icons/Compass.jsx";
+
+// var current = {
+//   sunrise: 1591140098,
+//   sunset: 1591188490,
+// };
+
+// if (new Date().valueOf() / 1000 < current.sunset) {
+//   console.log("Day Time");
+// } else {
+//   console.log("Night Time");
+// }
 
 const windContent = (
   <Box display="flex" justifyContent="space-between">
@@ -34,6 +47,20 @@ export default function Home() {
       <div className="container">
         <div className="weather-items">
           <Grid container item spacing={2}>
+            <Grid item xs={12} sm={12}>
+              <Box
+                width="100%"
+                display="flex"
+                justifyContent="space-between"
+                alignItems="center"
+                // backgroundColor="#f9f9f9"
+                pt={2}
+                pb={2}
+              >
+                <Logo />
+                <Clock />
+              </Box>
+            </Grid>
             <Grid item xs={12} sm={3}>
               <CurrentWeatherCard />
             </Grid>
