@@ -7,8 +7,9 @@ import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
 
-import CommonCard from "../components/CommonCard/CommonCard";
 import CurrentWeatherCard from "../components/CurrentWeatherCard/CurrentWeatherCard";
+import CommonCard from "../components/CommonCard/CommonCard";
+import DailyCard from "../components/DailyCard/DailyCard";
 
 import CompassIcon from "../components/Icons/Compass";
 import Logo from "../components/Logo/Logo";
@@ -61,11 +62,40 @@ export default function Home() {
                 <Clock />
               </Box>
             </Grid>
+
             <Grid item xs={12} sm={3}>
               <CurrentWeatherCard />
             </Grid>
             <Grid item xs={12} sm={9}>
               <Grid container item spacing={2}>
+                <Grid item xs={12} sm={5}>
+                  <CommonCard
+                    name="Today"
+                    value="8"
+                    msg="well meaning and kindly. a benevolent smile"
+                  />
+                </Grid>
+                <Grid item xs={1} sm={1}>
+                  <DailyCard day="Mon" temp={27} />
+                </Grid>
+                <Grid item xs={1} sm={1}>
+                  <DailyCard day="Tue" temp={27} />
+                </Grid>
+                <Grid item xs={1} sm={1}>
+                  <DailyCard day="Wed" temp={27} />
+                </Grid>
+                <Grid item xs={1} sm={1}>
+                  <DailyCard day="Thu" temp={27} />
+                </Grid>
+                <Grid item xs={1} sm={1}>
+                  <DailyCard day="Fri" temp={27} />
+                </Grid>
+                <Grid item xs={1} sm={1}>
+                  <DailyCard day="Sat" temp={27} />
+                </Grid>
+                <Grid item xs={1} sm={1}>
+                  <DailyCard day="Sun" temp={27} />
+                </Grid>
                 <Grid item xs={12} sm={6}>
                   <CommonCard name="Wind" content={windContent} />
                 </Grid>

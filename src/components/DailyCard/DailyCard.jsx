@@ -10,12 +10,29 @@ const CardContentNoPadding = styled(CardContent)(`&:last-child{
   padding-bottom:16px;
 }`);
 
-export default function DailyCard() {
+export default function DailyCard(props) {
   return (
     <>
-      <Box>
-        <Card className="common-card" variant="outlined">
-          <CardContentNoPadding></CardContentNoPadding>
+      <Box textAlign={"center"}>
+        <Card className="" variant="outlined">
+          <CardContentNoPadding>
+            <Typography
+              className="card-title"
+              //   sx={{ fontSize: 14 }}
+              color="text.secondary"
+              gutterBottom
+            >
+              {props.day}
+            </Typography>
+            <Typography
+              className="card-title"
+              //   sx={{ fontSize: 14 }}
+              color="text.secondary"
+              gutterBottom
+            >
+              {props.temp}
+            </Typography>
+          </CardContentNoPadding>
         </Card>
       </Box>
     </>
