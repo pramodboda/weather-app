@@ -4,6 +4,8 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 
+import "./DailyCard.css";
+
 import { styled } from "@mui/material/styles";
 
 const CardContentNoPadding = styled(CardContent)(`&:last-child{
@@ -24,12 +26,13 @@ export default function DailyCard(props) {
             >
               {props.day}
             </Typography>
-            <Typography
-              className="card-title"
-              //   sx={{ fontSize: 14 }}
-              color="text.secondary"
-              gutterBottom
-            >
+            <Box className="icon-img">
+              <img
+                src="http://openweathermap.org/img/wn/10d@2x.png"
+                alt="weather icon img"
+              />
+            </Box>
+            <Typography variant="body2" color="text.secondary" gutterBottom>
               {props.temp}
             </Typography>
           </CardContentNoPadding>
