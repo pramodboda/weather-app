@@ -3,6 +3,7 @@ import Typography from "@mui/material/Typography";
 
 export default function Clock() {
   const [currentTime, setCurrentTime] = useState(new Date());
+  const [dayStatus, setDayStatus] = useState("night");
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -41,11 +42,11 @@ export default function Clock() {
   //   }
 
   let data = [
-    [0, 4, "Good night"],
-    [5, 11, "Good morning"], //Store messages in an array
-    [12, 17, "Good afternoon"],
-    [18, 24, "Good evening"],
-    [20, 0, "Good night"],
+    [0, 4, "Good night", "night"],
+    [5, 11, "Good morning", "morning"], //Store messages in an array
+    [12, 17, "Good afternoon", "afternoon"],
+    [18, 24, "Good evening", "evening"],
+    [20, 0, "Good night", "night"],
   ];
 
   let hr = new Date().getHours();
@@ -53,6 +54,8 @@ export default function Clock() {
   for (var i = 0; i < data.length; i++) {
     if (hr >= data[i][0] && hr <= data[i][1]) {
       console.log(data[i][2]);
+      // setDayStatus(data[i][3]);
+      // console.log(dayStatus);
     }
   }
 
