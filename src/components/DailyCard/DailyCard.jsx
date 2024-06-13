@@ -16,7 +16,7 @@ export default function DailyCard(props) {
   return (
     <>
       <Box textAlign={"center"}>
-        <Card className="" variant="outlined">
+        <Card className="" variant="outlined" textAlign={"center"}>
           <CardContentNoPadding>
             <Typography
               className="card-title"
@@ -32,7 +32,7 @@ export default function DailyCard(props) {
                 alt="weather icon img"
               />
             </Box>
-            <Typography variant="body2" color="text.secondary" gutterBottom>
+            <Typography variant="h6" color="text.secondary" gutterBottom>
               {props.temp}
             </Typography>
           </CardContentNoPadding>

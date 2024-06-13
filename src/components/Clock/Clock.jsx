@@ -59,7 +59,11 @@ export default function Clock() {
   //   ======= End =======
 
   return (
-    <Typography component="body" variant="p">
+    <Typography
+      component="h5"
+      variant="h5"
+      sx={{ color: "#f9f9f9", "text-shadow": "1px 2px 2px rgba(0,0,0,0.3)" }}
+    >
       {/* ===== default ===== */}
       {/* {currentTime.toLocaleTimeString()} */}
       {currentTime.toLocaleTimeString(undefined, {

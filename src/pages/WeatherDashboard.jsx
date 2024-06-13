@@ -3,17 +3,18 @@ import React from "react";
 // import * as React from "react";
 import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
-import Paper from "@mui/material/Paper";
+// import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
 
 import CurrentWeatherCard from "../components/CurrentWeatherCard/CurrentWeatherCard";
 import CommonCard from "../components/CommonCard/CommonCard";
-import DailyCard from "../components/DailyCard/DailyCard";
-
+// import DailyCard from "../components/DailyCard/DailyCard";
+import DailyWeather from "../components/DailyWeather/DailyWeather";
 import CompassIcon from "../components/Icons/Compass";
 import Logo from "../components/Logo/Logo";
 import Clock from "../components/Clock/Clock";
+import Footer from "../components/Footer/Footer";
 // import Compass from "../components/Icons/Compass.jsx";
 
 // var current = {
@@ -38,7 +39,9 @@ const windContent = (
     </div>
     <div>
       <Typography variant="body2">Wind Direction</Typography>
-      <div>{CompassIcon}</div>
+      <div>
+        <CompassIcon />
+      </div>
     </div>
   </Box>
 );
@@ -68,67 +71,49 @@ export default function Home() {
             </Grid>
             <Grid item xs={12} sm={9}>
               <Grid container item spacing={2}>
-                <Grid item xs={12} sm={5}>
+                <Grid item xs={12} sm={12}>
+                  <DailyWeather />
+                </Grid>
+                <Grid item xs={12} sm={3}>
                   <CommonCard
                     name="Today"
                     value="8"
                     msg="well meaning and kindly. a benevolent smile"
                   />
                 </Grid>
-                <Grid item xs={1} sm={1}>
-                  <DailyCard day="Mon" temp={27} />
-                </Grid>
-                <Grid item xs={1} sm={1}>
-                  <DailyCard day="Tue" temp={27} />
-                </Grid>
-                <Grid item xs={1} sm={1}>
-                  <DailyCard day="Wed" temp={27} />
-                </Grid>
-                <Grid item xs={1} sm={1}>
-                  <DailyCard day="Thu" temp={27} />
-                </Grid>
-                <Grid item xs={1} sm={1}>
-                  <DailyCard day="Fri" temp={27} />
-                </Grid>
-                <Grid item xs={1} sm={1}>
-                  <DailyCard day="Sat" temp={27} />
-                </Grid>
-                <Grid item xs={1} sm={1}>
-                  <DailyCard day="Sun" temp={27} />
-                </Grid>
                 <Grid item xs={12} sm={6}>
                   <CommonCard name="Wind" content={windContent} />
                 </Grid>
 
-                <Grid item xs={12} sm={3}>
+                <Grid item xs={6} sm={3}>
                   <CommonCard
                     name="UV Index"
                     value="8"
                     msg="well meaning and kindly. a benevolent smile"
                   />
                 </Grid>
-                <Grid item xs={12} sm={3}>
+                <Grid item xs={6} sm={3}>
                   <CommonCard
                     name="Feels Like"
                     value="22"
                     msg="well meaning and kindly. a benevolent smile"
                   />
                 </Grid>
-                <Grid item xs={12} sm={3}>
+                <Grid item xs={6} sm={3}>
                   <CommonCard
                     name="Visibility"
                     value="22"
                     msg="well meaning and kindly. a benevolent smile"
                   />
                 </Grid>
-                <Grid item xs={12} sm={3}>
+                <Grid item xs={6} sm={3}>
                   <CommonCard
                     name="Humidity"
                     value="62%"
                     msg="well meaning and kindly. a benevolent smile"
                   />
                 </Grid>
-                <Grid item xs={12} sm={3}>
+                <Grid item xs={6} sm={3}>
                   <CommonCard
                     name="Air Quality"
                     value="35"
@@ -136,7 +121,7 @@ export default function Home() {
                     msg="well meaning and kindly. a benevolent smile"
                   />
                 </Grid>
-                <Grid item xs={12} sm={3}>
+                <Grid item xs={6} sm={3}>
                   <CommonCard
                     name="sunset and sunrise"
                     value="35"
@@ -144,7 +129,7 @@ export default function Home() {
                     msg="well meaning and kindly. a benevolent smile"
                   />
                 </Grid>
-                <Grid item xs={12} sm={3}>
+                <Grid item xs={6} sm={3}>
                   <CommonCard
                     name="pressure"
                     value="35"
@@ -153,6 +138,19 @@ export default function Home() {
                   />
                 </Grid>
               </Grid>
+            </Grid>
+            <Grid item xs={12} sm={12}>
+              <Box
+                width="100%"
+                display="flex"
+                justifyContent="center"
+                alignItems="center"
+                // backgroundColor="#f9f9f9"
+                pt={3}
+                pb={2}
+              >
+                <Footer />
+              </Box>
             </Grid>
           </Grid>
         </div>
