@@ -1,18 +1,12 @@
 import React, { useState, useEffect } from "react";
 import Typography from "@mui/material/Typography";
+// import { useAppContext } from "../../contexts/AppContext/AppContext";
+import { useAppContext } from "../../hooks/useAppContext";
 
 export default function Clock() {
   const [currentTime, setCurrentTime] = useState(new Date());
-  const [dayStatus, setDayStatus] = useState("night");
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentTime(new Date());
-    }, 1000);
-    return () => {
-      clearInterval(timer);
-    };
-  }, []);
+  const { timesOfDay, setTimesOfDay } = useAppContext();
 
   //   ======= Day of date =======
 
@@ -27,21 +21,7 @@ export default function Clock() {
   // Night: 10 pm to 12:59 am
   // Late night: 1 am to 4:59 am
 
-  //   const hours = new Date();
-  //   const meridiem = hours.getHours() >= 12 ? "PM" : "AM";
-  //   let timeOfDay;
-
-  //   if (hours < 12 && meridiem === "PM") {
-  //     timeOfDay = "morning";
-  //   } else if (hours < 17 && meridiem === "PM") {
-  //     timeOfDay = "afternoon";
-  //   } else if (hours < 20 && meridiem === "PM") {
-  //     timeOfDay = "evening";
-  //   } else if (hours < 5 && meridiem === "AM") {
-  //     timeOfDay = "night";
-  //   }
-
-  let data = [
+  let timesOfDay_Data = [
     [0, 4, "Good night", "night"],
     [5, 11, "Good morning", "morning"], //Store messages in an array
     [12, 17, "Good afternoon", "afternoon"],
@@ -50,30 +30,45 @@ export default function Clock() {
   ];
 
   let hr = new Date().getHours();
-
-  for (var i = 0; i < data.length; i++) {
-    if (hr >= data[i][0] && hr <= data[i][1]) {
-      console.log(data[i][2]);
-      // setDayStatus(data[i][3]);
-      // console.log(dayStatus);
+  let timesOfDayValue;
+  for (var i = 0; i < timesOfDay_Data.length; i++) {
+    if (hr >= timesOfDay_Data[i][0] && hr <= timesOfDay_Data[i][1]) {
+      // console.log(data[i][2]);
+      timesOfDayValue = timesOfDay_Data[i][3];
     }
   }
 
   //   ======= End =======
 
+  // useEffect - It runs after the component renders and can be used to fetch data, update the DOM, or set up event listeners.
+  useEffect(() => {
+    setTimesOfDay(timesOfDayValue);
+    // setTimesOfDay("morning");
+    // setTimesOfDay("night");
+    const timer = setInterval(() => {
+      setCurrentTime(new Date());
+    }, 1000);
+    return () => {
+      clearInterval(timer);
+    };
+  }, []);
+
   return (
-    <Typography
-      component="h5"
-      variant="h5"
-      sx={{ color: "#f9f9f9", "text-shadow": "1px 2px 2px rgba(0,0,0,0.3)" }}
-    >
-      {/* ===== default ===== */}
-      {/* {currentTime.toLocaleTimeString()} */}
-      {currentTime.toLocaleTimeString(undefined, {
-        hour: "2-digit",
-        minute: "2-digit",
-      })}
-      {/* Good {timeOfDay}! */}
-    </Typography>
+    <>
+      {timesOfDay}
+      <Typography
+        component="h5"
+        variant="h5"
+        sx={{ color: "#f9f9f9", textShadow: "1px 2px 2px rgba(0,0,0,0.3)" }}
+      >
+        {/* ===== default ===== */}
+        {/* {currentTime.toLocaleTimeString()} */}
+        {currentTime.toLocaleTimeString(undefined, {
+          hour: "2-digit",
+          minute: "2-digit",
+        })}
+        {/* Good {timeOfDay}! */}
+      </Typography>
+    </>
   );
 }

@@ -2,10 +2,13 @@ import React, { useEffect } from "react";
 import "./App.css";
 import WeatherDashboard from "./pages/WeatherDashboard";
 
+// import getTimesOfDay from "./utils/getTimesOfDay";
+// getTimesOfDay();
+
 //Context
 import { ColorModeContextProvider } from "./contexts/ColorModeContext";
 
-import DaySkyVid from "./assets/videos/day-sky.mp4";
+import AppContextProvider from "./contexts/AppContext/AppContextProvider";
 
 function App() {
   useEffect(() => {
@@ -17,12 +20,11 @@ function App() {
 
   return (
     <>
-      <video autoPlay muted loop id="bgVid">
-        <source src={DaySkyVid} type="video/mp4" />
-      </video>
-      <ColorModeContextProvider>
-        <WeatherDashboard className="weather-dashboard" />
-      </ColorModeContextProvider>
+      <AppContextProvider>
+        <ColorModeContextProvider>
+          <WeatherDashboard className="weather-dashboard" />
+        </ColorModeContextProvider>
+      </AppContextProvider>
     </>
   );
 }

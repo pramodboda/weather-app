@@ -51,7 +51,8 @@ export const ColorModeContextProvider = ({ children }) => {
                   styleOverrides: {
                     // Name of the slot
                     root: {
-                      background: "rgba(33, 150, 243, 0.65)",
+                      // background: "rgba(33, 150, 243, 0.65)",
+                      background: "rgba(0, 0, 0, 0.65)",
                       // background: "rgba(41, 121, 255, 0.6)",
 
                       borderRadius: "1.2rem",

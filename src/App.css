@@ -28,6 +28,10 @@
   top: 0;
   left: 0;
   z-index: -1;
+
+  filter: blur(0.05rem);
+  filter: brightness(40%);
+  /* border: 1px solid red; */
 }
 
 .weather-dashboard {
@@ -64,4 +68,9 @@
   font-size: 2rem;
   position: absolute;
   top: 0.8rem;
+}
+
+/* footer */
+.footer a {
+  color: #f9f9f9;
 }

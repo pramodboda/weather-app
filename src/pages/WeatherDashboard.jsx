@@ -1,6 +1,5 @@
 import React from "react";
 
-// import * as React from "react";
 import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 // import Paper from "@mui/material/Paper";
@@ -15,6 +14,9 @@ import CompassIcon from "../components/Icons/Compass";
 import Logo from "../components/Logo/Logo";
 import Clock from "../components/Clock/Clock";
 import Footer from "../components/Footer/Footer";
+
+import { useAppContext } from "../hooks/useAppContext";
+import BGVid from "../components/BGVid/BGVid";
 // import Compass from "../components/Icons/Compass.jsx";
 
 // var current = {
@@ -27,6 +29,9 @@ import Footer from "../components/Footer/Footer";
 // } else {
 //   console.log("Night Time");
 // }
+
+const { bgVidURL } = useAppContext;
+// updateBg();
 
 const windContent = (
   <Box display="flex" justifyContent="space-between">
@@ -48,6 +53,7 @@ const windContent = (
 export default function Home() {
   return (
     <>
+      <BGVid />
       <div className="container">
         <div className="weather-items">
           <Grid container item spacing={2}>
