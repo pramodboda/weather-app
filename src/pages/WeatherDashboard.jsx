@@ -19,16 +19,7 @@ import { useAppContext } from "../hooks/useAppContext";
 import BGVid from "../components/BGVid/BGVid";
 // import Compass from "../components/Icons/Compass.jsx";
 
-// var current = {
-//   sunrise: 1591140098,
-//   sunset: 1591188490,
-// };
-
-// if (new Date().valueOf() / 1000 < current.sunset) {
-//   console.log("Day Time");
-// } else {
-//   console.log("Night Time");
-// }
+import getFormattedWeatherData from "../services/api/weatherService.js";
 
 const { bgVidURL } = useAppContext;
 // updateBg();
@@ -50,7 +41,14 @@ const windContent = (
     </div>
   </Box>
 );
-export default function Home() {
+export default function WeatherDashboard() {
+  const getWeather = async () => {
+    const data = await getFormattedWeatherData({
+      q: "banjara hills",
+    });
+    console.log(data);
+  };
+  getWeather();
   return (
     <>
       <BGVid />

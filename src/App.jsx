@@ -6,24 +6,17 @@ import WeatherDashboard from "./pages/WeatherDashboard";
 // getTimesOfDay();
 
 //Context
-import { ColorModeContextProvider } from "./contexts/ColorModeContext";
+import { ThemeProvider } from "./contexts/ThemeContext";
 
 import AppContextProvider from "./contexts/AppContext/AppContextProvider";
 
 function App() {
-  useEffect(() => {
-    const playBg = () => {
-      document.querySelector("#bgVid").play();
-    };
-    playBg();
-  }, []);
-
   return (
     <>
       <AppContextProvider>
-        <ColorModeContextProvider>
+        <ThemeProvider>
           <WeatherDashboard className="weather-dashboard" />
-        </ColorModeContextProvider>
+        </ThemeProvider>
       </AppContextProvider>
     </>
   );

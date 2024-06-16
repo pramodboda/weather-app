@@ -4,9 +4,10 @@ import Typography from "@mui/material/Typography";
 import { useAppContext } from "../../hooks/useAppContext";
 
 export default function Clock() {
-  const [currentTime, setCurrentTime] = useState(new Date());
+  // const [] = useAppContext();
 
-  const { timesOfDay, setTimesOfDay } = useAppContext();
+  const { currentTime, setCurrentTime, timesOfDay, setTimesOfDay } =
+    useAppContext();
 
   //   ======= Day of date =======
 
@@ -44,6 +45,7 @@ export default function Clock() {
   useEffect(() => {
     setTimesOfDay(timesOfDayValue);
     // setTimesOfDay("morning");
+    // setTimesOfDay("evening");
     // setTimesOfDay("night");
     const timer = setInterval(() => {
       setCurrentTime(new Date());
@@ -55,7 +57,7 @@ export default function Clock() {
 
   return (
     <>
-      {timesOfDay}
+      {/* {timesOfDay} */}
       <Typography
         component="h5"
         variant="h5"
