@@ -77,6 +77,25 @@ export default function WeatherDashboard() {
                   pt={2}
                   pb={2}
                 >
+                  <Typography variant="h3">
+                    Controls and input Fields
+                  </Typography>
+                  <Typography variant="body2">Morning</Typography>
+                  <Typography variant="body2">Afternoon</Typography>
+                  <Typography variant="body2">Evening</Typography>
+                  <Typography variant="body2">Night</Typography>
+                </Box>
+              </Grid>
+              <Grid item xs={12} sm={12}>
+                <Box
+                  width="100%"
+                  display="flex"
+                  justifyContent="space-between"
+                  alignItems="center"
+                  // backgroundColor="#f9f9f9"
+                  pt={2}
+                  pb={2}
+                >
                   <Logo />
                   <Clock weather={weather} />
                 </Box>
