@@ -3,13 +3,13 @@ import Typography from "@mui/material/Typography";
 // import { useAppContext } from "../../contexts/AppContext/AppContext";
 import { useAppContext } from "../../hooks/useAppContext";
 
-export default function Clock() {
+export default function Clock({ weather: { formattedLocalTime } }) {
   // const [] = useAppContext();
 
   const { currentTime, setCurrentTime, timesOfDay, setTimesOfDay } =
     useAppContext();
 
-  //   ======= Day of date =======
+  //   ======= Times of Day =======
 
   // Early morning: 5 am to 8:29 am
   // Mid-morning: 8:30 am to 10:29 am
@@ -65,11 +65,12 @@ export default function Clock() {
       >
         {/* ===== default ===== */}
         {/* {currentTime.toLocaleTimeString()} */}
-        {currentTime.toLocaleTimeString(undefined, {
+        {/* {currentTime.toLocaleTimeString(undefined, {
           hour: "2-digit",
           minute: "2-digit",
-        })}
+        })} */}
         {/* Good {timeOfDay}! */}
+        {formattedLocalTime.slice(-8)}
       </Typography>
     </>
   );

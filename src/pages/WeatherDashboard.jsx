@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
@@ -42,121 +42,134 @@ const windContent = (
   </Box>
 );
 export default function WeatherDashboard() {
+  const [query, setQuery] = useState({ q: "banjara hills" });
+  const [units, setUnits] = useState("metric");
+  const [weather, setWeather] = useState(null);
+
   const getWeather = async () => {
-    const data = await getFormattedWeatherData({
-      q: "banjara hills",
+    await getFormattedWeatherData({
+      ...query,
+      units,
+    }).then((data) => {
+      setWeather(data);
+      console.log("weather data: ", data);
     });
-    console.log(data);
   };
-  getWeather();
+
+  useEffect(() => {
+    // getWeather();
+  }, [query, units]);
+  // getWeather();
   return (
     <>
       <BGVid />
       <div className="container">
         <div className="weather-items">
-          <Grid container item spacing={2}>
-            <Grid item xs={12} sm={12}>
-              <Box
-                width="100%"
-                display="flex"
-                justifyContent="space-between"
-                alignItems="center"
-                // backgroundColor="#f9f9f9"
-                pt={2}
-                pb={2}
-              >
-                <Logo />
-                <Clock />
-              </Box>
-            </Grid>
+          {weather && (
+            <Grid container item spacing={2}>
+              <Grid item xs={12} sm={12}>
+                <Box
+                  width="100%"
+                  display="flex"
+                  justifyContent="space-between"
+                  alignItems="center"
+                  // backgroundColor="#f9f9f9"
+                  pt={2}
+                  pb={2}
+                >
+                  <Logo />
+                  <Clock weather={weather} />
+                </Box>
+              </Grid>
 
-            <Grid item xs={12} sm={3}>
-              <CurrentWeatherCard />
-            </Grid>
-            <Grid item xs={12} sm={9}>
-              <Grid container item spacing={2}>
-                <Grid item xs={12} sm={12}>
-                  <DailyWeather />
-                </Grid>
-                <Grid item xs={12} sm={3}>
-                  <CommonCard
-                    name="Today"
-                    value="8"
-                    msg="well meaning and kindly. a benevolent smile"
-                  />
-                </Grid>
-                <Grid item xs={12} sm={6}>
-                  <CommonCard name="Wind" content={windContent} />
-                </Grid>
+              <Grid item xs={12} sm={3}>
+                <CurrentWeatherCard weather={weather} />
+              </Grid>
+              <Grid item xs={12} sm={9}>
+                <Grid container item spacing={2}>
+                  <Grid item xs={12} sm={12}>
+                    <DailyWeather weather={weather} />
+                  </Grid>
+                  <Grid item xs={12} sm={3}>
+                    <CommonCard
+                      name="Today"
+                      value="8"
+                      msg="well meaning and kindly. a benevolent smile"
+                    />
+                  </Grid>
+                  <Grid item xs={12} sm={6}>
+                    <CommonCard name="Wind" content={windContent} />
+                  </Grid>
 
-                <Grid item xs={6} sm={3}>
-                  <CommonCard
-                    name="UV Index"
-                    value="8"
-                    msg="well meaning and kindly. a benevolent smile"
-                  />
-                </Grid>
-                <Grid item xs={6} sm={3}>
-                  <CommonCard
-                    name="Feels Like"
-                    value="22"
-                    msg="well meaning and kindly. a benevolent smile"
-                  />
-                </Grid>
-                <Grid item xs={6} sm={3}>
-                  <CommonCard
-                    name="Visibility"
-                    value="22"
-                    msg="well meaning and kindly. a benevolent smile"
-                  />
-                </Grid>
-                <Grid item xs={6} sm={3}>
-                  <CommonCard
-                    name="Humidity"
-                    value="62%"
-                    msg="well meaning and kindly. a benevolent smile"
-                  />
-                </Grid>
-                <Grid item xs={6} sm={3}>
-                  <CommonCard
-                    name="Air Quality"
-                    value="35"
-                    valueDescription="Good"
-                    msg="well meaning and kindly. a benevolent smile"
-                  />
-                </Grid>
-                <Grid item xs={6} sm={3}>
-                  <CommonCard
-                    name="sunset and sunrise"
-                    value="35"
-                    valueDescription="Good"
-                    msg="well meaning and kindly. a benevolent smile"
-                  />
-                </Grid>
-                <Grid item xs={6} sm={3}>
-                  <CommonCard
-                    name="pressure"
-                    value="35"
-                    valueDescription="Good"
-                    msg="well meaning and kindly. a benevolent smile"
-                  />
+                  <Grid item xs={6} sm={3}>
+                    <CommonCard
+                      name="UV Index"
+                      value="8"
+                      msg="well meaning and kindly. a benevolent smile"
+                    />
+                  </Grid>
+                  <Grid item xs={6} sm={3}>
+                    <CommonCard
+                      name="Feels Like"
+                      value="22"
+                      msg="well meaning and kindly. a benevolent smile"
+                    />
+                  </Grid>
+                  <Grid item xs={6} sm={3}>
+                    <CommonCard
+                      name="Visibility"
+                      value="22"
+                      msg="well meaning and kindly. a benevolent smile"
+                    />
+                  </Grid>
+                  <Grid item xs={6} sm={3}>
+                    <CommonCard
+                      name="Humidity"
+                      value="62%"
+                      msg="well meaning and kindly. a benevolent smile"
+                    />
+                  </Grid>
+                  <Grid item xs={6} sm={3}>
+                    <CommonCard
+                      name="Air Quality"
+                      value="35"
+                      valueDescription="Good"
+                      msg="well meaning and kindly. a benevolent smile"
+                    />
+                  </Grid>
+                  <Grid item xs={6} sm={3}>
+                    <CommonCard
+                      name="sunset and sunrise"
+                      value="35"
+                      valueDescription="Good"
+                      msg="well meaning and kindly. a benevolent smile"
+                    />
+                  </Grid>
+                  <Grid item xs={6} sm={3}>
+                    <CommonCard
+                      name="pressure"
+                      value="35"
+                      valueDescription="Good"
+                      msg="well meaning and kindly. a benevolent smile"
+                    />
+                  </Grid>
                 </Grid>
               </Grid>
+              <Grid item xs={12} sm={12}>
+                <Box
+                  width="100%"
+                  display="flex"
+                  justifyContent="center"
+                  alignItems="center"
+                  // backgroundColor="#f9f9f9"
+                  pt={3}
+                  pb={2}
+                >
+                  <Footer />
+                </Box>
+              </Grid>
             </Grid>
-            <Grid item xs={12} sm={12}>
-              <Box
-                width="100%"
-                display="flex"
-                justifyContent="center"
-                alignItems="center"
-                // backgroundColor="#f9f9f9"
-                pt={3}
-                pb={2}
-              >
-                <Footer />
-              </Box>
-            </Grid>
-          </Grid>
+          )}
         </div>
       </div>
     </>
