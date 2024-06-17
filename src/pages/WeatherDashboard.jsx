@@ -57,7 +57,7 @@ export default function WeatherDashboard() {
   };
 
   useEffect(() => {
-    // getWeather();
+    getWeather();
   }, [query, units]);
   // getWeather();
   return (
