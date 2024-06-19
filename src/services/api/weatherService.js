@@ -7,7 +7,7 @@ const getWeatherData = (infoType, searchParams) => {
   const url = new URL(BASE_URL + infoType);
   url.search = new URLSearchParams({ ...searchParams, appid: API_KEY });
 
-  // console.log(url);
+  console.log(url);
   return fetch(url)
     .then((res) => res.json())
     .then((data) => data);
@@ -30,7 +30,7 @@ const formatCurrent = (data) => {
     dt,
     sys: { country, sunrise, sunset },
     weather,
-    wind: { speed },
+    wind: { speed, gust, deg },
     timezone,
   } = data;
 
@@ -47,7 +47,9 @@ const formatCurrent = (data) => {
     country,
     sunrise: formatToLocalTime(sunrise, timezone, "hh:mm a"),
     sunset: formatToLocalTime(sunset, timezone, "hh:mm a"),
-    speed,
+    speed: speed.toFixed(),
+    gust,
+    deg,
     details,
     icon: iconURL_FromCode(icon),
     formattedLocalTime,

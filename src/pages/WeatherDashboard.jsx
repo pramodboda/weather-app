@@ -8,9 +8,10 @@ import Grid from "@mui/material/Grid";
 
 import CurrentWeatherCard from "../components/CurrentWeatherCard/CurrentWeatherCard";
 import CommonCard from "../components/CommonCard/CommonCard";
+import WindCard from "../components/Wind/WindCard.jsx";
 // import DailyCard from "../components/DailyCard/DailyCard";
 import DailyWeather from "../components/DailyWeather/DailyWeather";
-import CompassIcon from "../components/Icons/Compass";
+
 import Logo from "../components/Logo/Logo";
 import Clock from "../components/Clock/Clock";
 import Footer from "../components/Footer/Footer";
@@ -24,23 +25,6 @@ import getFormattedWeatherData from "../services/api/weatherService.js";
 const { bgVidURL } = useAppContext;
 // updateBg();
 
-const windContent = (
-  <Box display="flex" justifyContent="space-between">
-    <div>
-      <Typography variant="body2">Wind Speed</Typography>
-      <Typography variant="body2">34</Typography>
-      <hr />
-      <Typography variant="body2">Wind Gusts</Typography>
-      <Typography variant="body2">64</Typography>
-    </div>
-    <div>
-      <Typography variant="body2">Wind Direction</Typography>
-      <div>
-        <CompassIcon />
-      </div>
-    </div>
-  </Box>
-);
 export default function WeatherDashboard() {
   const [query, setQuery] = useState({ q: "banjara hills" });
   const [units, setUnits] = useState("metric");
@@ -57,7 +41,7 @@ export default function WeatherDashboard() {
   };
 
   useEffect(() => {
-    getWeather();
+    // getWeather();
   }, [query, units]);
   // getWeather();
   return (
@@ -81,7 +65,6 @@ export default function WeatherDashboard() {
                     Controls and input Fields
                   </Typography>
                   <Typography variant="body2">Morning</Typography>
-                  <Typography variant="body2">Afternoon</Typography>
                   <Typography variant="body2">Evening</Typography>
                   <Typography variant="body2">Night</Typography>
                 </Box>
@@ -117,7 +100,7 @@ export default function WeatherDashboard() {
                     />
                   </Grid>
                   <Grid item xs={12} sm={6}>
-                    <CommonCard name="Wind" content={windContent} />
+                    <WindCard weather={weather} />
                   </Grid>
 
                   <Grid item xs={6} sm={3}>
@@ -130,7 +113,7 @@ export default function WeatherDashboard() {
                   <Grid item xs={6} sm={3}>
                     <CommonCard
                       name="Feels Like"
-                      value="22"
+                      value={`${weather.feels_like.toFixed()}°`}
                       msg="well meaning and kindly. a benevolent smile"
                     />
                   </Grid>
@@ -144,7 +127,7 @@ export default function WeatherDashboard() {
                   <Grid item xs={6} sm={3}>
                     <CommonCard
                       name="Humidity"
-                      value="62%"
+                      value={`${weather.humidity.toFixed()}%`}
                       msg="well meaning and kindly. a benevolent smile"
                     />
                   </Grid>

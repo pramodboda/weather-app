@@ -31,7 +31,7 @@ export default function CurrentWeatherCard({
             className="current-temp-value"
             sx={{ fontSize: "72px" }}
           >
-            {`${temp.toFixed()}`} <sup>°C</sup>
+            {`${temp.toFixed()}`} <sup>°</sup>
           </Typography>
         </Box>
 
