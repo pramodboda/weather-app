@@ -130,24 +130,29 @@ const themes = {
           "&:last-child": {
             paddingBottom: 0,
             marginBottom: 0,
-            border: "1px solid red",
           },
         },
-
-        // root: {
-        //   "&:last-child": {
-        //     paddingBottom: 0,
-        //     marginBottom: 0,
-        //     border: "1px solid red",
-        //   },
-        // },
       },
       MuiCard: {
         styleOverrides: {
           // Name of the slot
           root: {
             background: "rgba(0, 0, 0, 0.65)",
+            // background: "rgba(33, 33, 33, 0.65)",
             borderRadius: "1.2rem",
+            // border: 0,
+          },
+        },
+      },
+      MuiPaper: {
+        styleOverrides: {
+          // Name of the slot
+          root: {
+            background: "rgba(0, 0, 0, 0.65)",
+            // background: "rgba(33, 33, 33, 0.65)",
+            // borderRadius: "1.2rem",
+            // border: 0,
+            border: "1px solid rgba(255, 255, 255, 0.12)",
           },
         },
       },
