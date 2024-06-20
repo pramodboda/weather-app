@@ -27,10 +27,7 @@ export default function DailyCard(props) {
               {props.day}
             </Typography>
             <Box className="icon-img">
-              <img
-                src="http://openweathermap.org/img/wn/10d@2x.png"
-                alt="weather icon img"
-              />
+              <img src={props.icon} alt="weather icon img" />
             </Box>
             <Typography variant="h6" color="text.secondary" gutterBottom>
               {props.temp}

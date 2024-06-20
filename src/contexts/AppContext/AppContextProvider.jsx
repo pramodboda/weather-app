@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 import AppContext from "./AppContext";
 const AppContextProvider = ({ children }) => {
+  const [query, setQuery] = useState("Banjara Hills");
   const [currentTime, setCurrentTime] = useState(new Date());
   const [timesOfDay, setTimesOfDay] = useState("night");
 
@@ -10,6 +11,7 @@ const AppContextProvider = ({ children }) => {
   return (
     <AppContext.Provider
       value={{
+        setQuery,
         currentTime,
         setCurrentTime,
         timesOfDay,

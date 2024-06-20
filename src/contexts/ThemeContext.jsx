@@ -130,8 +130,17 @@ const themes = {
           "&:last-child": {
             paddingBottom: 0,
             marginBottom: 0,
+            border: "1px solid red",
           },
         },
+
+        // root: {
+        //   "&:last-child": {
+        //     paddingBottom: 0,
+        //     marginBottom: 0,
+        //     border: "1px solid red",
+        //   },
+        // },
       },
       MuiCard: {
         styleOverrides: {

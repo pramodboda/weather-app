@@ -13,7 +13,8 @@ import { FreeMode, Pagination } from "swiper/modules";
 import CommonCard from "../CommonCard/CommonCard";
 import DailyCard from "../DailyCard/DailyCard";
 
-function DailyWeather() {
+function DailyWeather({ weather: { temp, icon, daily } }) {
+  // console.log("dataaaaa:", data);
   return (
     <>
       <Swiper
@@ -27,15 +28,11 @@ function DailyWeather() {
         modules={[FreeMode, Pagination]}
         className="mySwiper"
       >
-        <SwiperSlide>
-          <DailyCard day="Today" temp={27} />
-          {/* <CommonCard
-            name="Today"
-            value="8"
-            msg="well meaning and kindly. a benevolent smile"
-          /> */}
-        </SwiperSlide>
-        <SwiperSlide>
+        {/* <SwiperSlide>
+          <DailyCard day="Today" icon={icon} temp={`${temp.toFixed()}` + "°"} />
+        </SwiperSlide> */}
+
+        {/* <SwiperSlide>
           <DailyCard day="Mon" temp={27} />
         </SwiperSlide>
         <SwiperSlide>
@@ -55,7 +52,17 @@ function DailyWeather() {
         </SwiperSlide>
         <SwiperSlide>
           <DailyCard day="Sun" temp={27} />
-        </SwiperSlide>
+        </SwiperSlide> */}
+
+        {daily.map((day) => (
+          <SwiperSlide key={day.title}>
+            <DailyCard
+              day={day.title}
+              icon={day.icon}
+              temp={`${day.temp.toFixed()}` + "°"}
+            />
+          </SwiperSlide>
+        ))}
       </Swiper>
     </>
   );

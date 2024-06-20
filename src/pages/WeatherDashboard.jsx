@@ -9,6 +9,7 @@ import Grid from "@mui/material/Grid";
 import CurrentWeatherCard from "../components/CurrentWeatherCard/CurrentWeatherCard";
 import CommonCard from "../components/CommonCard/CommonCard";
 import WindCard from "../components/Wind/WindCard.jsx";
+import SunriseAndSunset from "../components/Cards/SunriseAndSunset/SunriseAndSunset.jsx";
 // import DailyCard from "../components/DailyCard/DailyCard";
 import DailyWeather from "../components/DailyWeather/DailyWeather";
 
@@ -41,7 +42,7 @@ export default function WeatherDashboard() {
   };
 
   useEffect(() => {
-    // getWeather();
+    getWeather();
   }, [query, units]);
   // getWeather();
   return (
@@ -140,11 +141,17 @@ export default function WeatherDashboard() {
                     />
                   </Grid>
                   <Grid item xs={6} sm={3}>
-                    <CommonCard
+                    {/* <CommonCard
                       name="sunset and sunrise"
                       value="35"
                       valueDescription="Good"
                       msg="well meaning and kindly. a benevolent smile"
+                    /> */}
+                    <SunriseAndSunset
+                      weather={weather}
+                      // value="35"
+                      // valueDescription="Good"
+                      // msg="well meaning and kindly. a benevolent smile"
                     />
                   </Grid>
                   <Grid item xs={6} sm={3}>
