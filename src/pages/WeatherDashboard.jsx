@@ -26,13 +26,8 @@ import BGVid from "../components/BGVid/BGVid";
 import getFormattedWeatherData from "../services/api/weatherService.js";
 import SearchForm from "../components/SearchForm/SearchForm.jsx";
 
-const { bgVidURL } = useAppContext;
-// updateBg();
-
 export default function WeatherDashboard() {
-  const [query, setQuery] = useState({ q: "banjara hills" });
-  const [units, setUnits] = useState("metric");
-  const [weather, setWeather] = useState(null);
+  const { query, setQuery, units, weather, setWeather } = useAppContext();
 
   const getWeather = async () => {
     await getFormattedWeatherData({

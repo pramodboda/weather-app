@@ -5,18 +5,17 @@ import WeatherDashboard from "./pages/WeatherDashboard";
 // import getTimesOfDay from "./utils/getTimesOfDay";
 // getTimesOfDay();
 
-//Context
-import { ThemeProvider } from "./contexts/ThemeContext";
-
+// importing contexts
 import AppContextProvider from "./contexts/AppContext/AppContextProvider";
+import { ThemeContextProvider } from "./contexts/ThemeContextProvider";
 
 function App() {
   return (
     <>
       <AppContextProvider>
-        <ThemeProvider>
+        <ThemeContextProvider>
           <WeatherDashboard className="weather-dashboard" />
-        </ThemeProvider>
+        </ThemeContextProvider>
       </AppContextProvider>
     </>
   );

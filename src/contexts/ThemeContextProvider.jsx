@@ -164,7 +164,7 @@ const themes = {
 const ThemeContext = createContext(themes.morning);
 
 // Create a provider component
-export const ThemeProvider = ({ children }) => {
+export const ThemeContextProvider = ({ children }) => {
   const [currentTheme, setCurrentTheme] = useState(themes.morning);
 
   useEffect(() => {
