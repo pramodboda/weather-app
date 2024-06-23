@@ -7,7 +7,6 @@ import {
 import { grey, blue } from "@mui/material/colors";
 
 import { CssBaseline } from "@mui/material";
-import { useAppContext } from "../hooks/useAppContext";
 
 const commonStyles = {
   typography: {
@@ -166,24 +165,25 @@ const ThemeContext = createContext(themes.morning);
 
 // Create a provider component
 export const ThemeContextProvider = ({ children }) => {
-  const { timesOfDay } = useAppContext();
   const [currentTheme, setCurrentTheme] = useState(themes.morning);
 
   useEffect(() => {
-    if (timesOfDay === "morning") {
+    const hour = new Date().getHours();
+
+    if (hour >= 5 && hour < 12) {
       setCurrentTheme(themes.morning);
-      // console.log("morning");
-    } else if (timesOfDay === "afternoon") {
+      console.log("morning");
+    } else if (hour >= 12 && hour < 18) {
       setCurrentTheme(themes.afternoon);
-      // console.log("afternoon");
-    } else if (timesOfDay === "evening") {
+      console.log("afternoon");
+    } else if (hour >= 18 && hour < 21) {
       setCurrentTheme(themes.evening);
-      // console.log("evening");
+      console.log("evening");
     } else {
       setCurrentTheme(themes.night);
-      // console.log("night");
+      console.log("night");
     }
-  });
+  }, []);
 
   return (
     <MUIThemeProvider theme={currentTheme}>

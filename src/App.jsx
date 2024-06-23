@@ -2,9 +2,6 @@ import React, { useEffect } from "react";
 import "./App.css";
 import WeatherDashboard from "./pages/WeatherDashboard";
 
-// import getTimesOfDay from "./utils/getTimesOfDay";
-// getTimesOfDay();
-
 // importing contexts
 import AppContextProvider from "./contexts/AppContext/AppContextProvider";
 import { ThemeContextProvider } from "./contexts/ThemeContextProvider";

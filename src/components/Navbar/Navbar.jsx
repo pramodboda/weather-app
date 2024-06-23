@@ -10,7 +10,7 @@ import CssBaseline from "@mui/material/CssBaseline";
 // import DarkLightModeBtn from "./DarkLightModeBtn";
 
 import Logo from "../Logo/Logo";
-import Clock from "../Clock/Clock";
+import CurrentTime from "../CurrentTime/CurrentTime";
 
 export default function NavBar(props) {
   return (
@@ -26,7 +26,7 @@ export default function NavBar(props) {
             width="100%"
           >
             <Logo />
-            <Clock weather={props.weather} />
+            <CurrentTime weather={props.weather} />
           </Stack>
         </Toolbar>
       </AppBar>

@@ -33,23 +33,6 @@ const BGVid = () => {
       setBgVidURL(NightSkyVid);
       console.log("night");
     }
-    // if (timesOfDay === "night") {
-    //   setBgVidURL(NightSkyVid);
-    //   console.log("bgVidURL:", bgVidURL);
-    //   console.log("timesOfDay:", timesOfDay);
-    // } else if (timesOfDay === "afternoon") {
-    //   setBgVidURL("afternoonURL");
-    //   console.log("bgVidURL:", bgVidURL);
-    //   console.log("timesOfDay:", timesOfDay);
-    // } else if (timesOfDay === "evening") {
-    //   setBgVidURL(EveningSkyVid);
-    //   console.log("bgVidURL:", bgVidURL);
-    //   console.log("timesOfDay:", timesOfDay);
-    // } else {
-    //   setBgVidURL(MorningSkyVid);
-    //   console.log("bgVidURL:", bgVidURL);
-    //   console.log("timesOfDay:", timesOfDay);
-    // }
   }, [bgVidURL]);
 
   return (

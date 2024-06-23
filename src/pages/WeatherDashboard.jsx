@@ -16,8 +16,6 @@ import SunriseAndSunset from "../components/Cards/SunriseAndSunset/SunriseAndSun
 // import DailyCard from "../components/DailyCard/DailyCard";
 import DailyWeather from "../components/DailyWeather/DailyWeather";
 
-import Logo from "../components/Logo/Logo";
-import Clock from "../components/Clock/Clock";
 import Footer from "../components/Footer/Footer";
 
 import BGVid from "../components/BGVid/BGVid";
@@ -42,7 +40,7 @@ export default function WeatherDashboard() {
   useEffect(() => {
     getWeather();
   }, [query, units]);
-  // getWeather();
+
   return (
     <>
       <BGVid />

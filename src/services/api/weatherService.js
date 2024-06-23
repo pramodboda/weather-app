@@ -16,11 +16,36 @@ const getWeatherData = (infoType, searchParams) => {
 // Helper function
 const iconURL_FromCode = (icon) =>
   `https://openweathermap.org/img/wn/${icon}@2x.png`;
+
 const formatToLocalTime = (
   secs,
   offset,
   format = "cccc, dd LLL yyyy' | Local time:'hh:mm a"
 ) => DateTime.fromSeconds(secs + offset, { zone: "utc" }).toFormat(format);
+
+const getTimesOfDay = (dt) => {
+  // Early morning: 5 am to 8:29 am
+  // Mid-morning: 8:30 am to 10:29 am
+  // Late morning: 10:30 am to 11:59 am
+  // Early afternoon: 12 pm to 1:59 pm
+  // Mid-afternoon: 2 pm to 3:59 pm
+  // Late afternoon: 4 pm to 5:59 pm
+  // Early evening: 6 pm to 7:59 pm
+  // Late evening: 8 pm to 9:59 pm
+  // Night: 10 pm to 12:59 am
+  // Late night: 1 am to 4:59 am
+
+  const hour = new Date(dt * 1000).getHours();
+  if (hour >= 5 && hour < 12) {
+    return "morning";
+  } else if (hour >= 12 && hour < 18) {
+    return "afternoon";
+  } else if (hour >= 18 && hour < 21) {
+    return "evening";
+  } else {
+    return "night";
+  }
+};
 
 const formatCurrent = (data) => {
   const {
@@ -36,7 +61,7 @@ const formatCurrent = (data) => {
 
   const { main: details, icon } = weather[0];
   const formattedLocalTime = formatToLocalTime(dt, timezone);
-
+  const timesOfDay = getTimesOfDay(dt);
   return {
     temp,
     feels_like,
@@ -57,6 +82,7 @@ const formatCurrent = (data) => {
     timezone,
     lat,
     lon,
+    timesOfDay,
   };
 };
 
