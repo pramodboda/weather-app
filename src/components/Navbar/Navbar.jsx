@@ -4,6 +4,7 @@
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Stack from "@mui/material/Stack";
+import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
 // import useScrollTrigger from "@mui/material/useScrollTrigger";
 
@@ -18,16 +19,17 @@ export default function NavBar(props) {
       <CssBaseline />
       <AppBar>
         <Toolbar>
-          <Stack
-            direction="row"
-            justifyContent="space-between"
-            alignItems="center"
-            spacing={2}
-            width="100%"
-          >
-            <Logo />
-            <CurrentTime weather={props.weather} />
-          </Stack>
+          <div className="container">
+            <Stack
+              justifyContent="space-between"
+              alignItems="center"
+              direction="row"
+              spacing={2}
+            >
+              <Logo />
+              <CurrentTime weather={props.weather} />
+            </Stack>
+          </div>
         </Toolbar>
       </AppBar>
       <Toolbar />

@@ -15,8 +15,8 @@ const CardContentNoPadding = styled(CardContent)(`&:last-child{
 export default function DailyCard(props) {
   return (
     <>
-      <Box textAlign={"center"}>
-        <Card className="" variant="outlined" textAlign={"center"}>
+      <Box textAlign="center">
+        <Card className="" variant="outlined" textAlign="center">
           <CardContentNoPadding>
             <Typography
               className="card-title"

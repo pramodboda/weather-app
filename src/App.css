@@ -2,7 +2,7 @@
 }
 
 .container {
-  max-width: 1280px;
+  width: 1280px;
   margin: 0 auto;
   padding: 0 1rem;
 }
@@ -75,4 +75,11 @@
 /* footer */
 .footer a {
   color: #f9f9f9;
+}
+
+@media only screen and (max-width: 786px) {
+  .container {
+    width: 100%;
+    margin: 0;
+  }
 }
