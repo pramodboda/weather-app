@@ -9,6 +9,7 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
 
+import FeatureLocations from "../components/FeatureLocations/FeatureLocations";
 import CurrentWeatherCard from "../components/CurrentWeatherCard/CurrentWeatherCard";
 import CommonCard from "../components/CommonCard/CommonCard";
 import WindCard from "../components/Wind/WindCard.jsx";
@@ -46,6 +47,7 @@ export default function WeatherDashboard() {
       <BGVid />
       <div className="container">
         <div className="weather-items">
+          <FeatureLocations />
           {weather && (
             <Grid container item spacing={2}>
               <Grid item xs={12} sm={12}>
@@ -89,6 +91,13 @@ export default function WeatherDashboard() {
               <Grid item xs={12} sm={9}>
                 <Grid container item spacing={2}>
                   <Grid item xs={12} sm={12}>
+                    <Typography
+                      variant="h6"
+                      color="text.secondary"
+                      gutterBottom
+                    >
+                      Daily forecast
+                    </Typography>
                     <DailyWeather weather={weather} />
                   </Grid>
                   <Grid item xs={12} sm={3}>

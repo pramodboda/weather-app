@@ -42,7 +42,7 @@ function SearchForm() {
           <InputBase
             sx={{ ml: 1, flex: 1 }}
             name="search"
-            placeholder="HITEC City"
+            placeholder="Ex: HITEC City"
             inputProps={{ "aria-label": "HITEC City" }}
           />
           <IconButton type="submit" sx={{ p: "10px" }} aria-label="search">

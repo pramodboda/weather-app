@@ -17,8 +17,10 @@ export default function CommonCard(props) {
         <CardContentNoPadding>
           <div>
             <Typography
-              className="card-title"
-              //   sx={{ fontSize: 14 }}
+              // className="card-title"
+              sx={{ lineHeight: "1.3" }}
+              component="p"
+              variant="overline"
               color="text.secondary"
               gutterBottom
             >

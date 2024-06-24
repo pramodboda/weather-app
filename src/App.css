@@ -1,10 +1,16 @@
 #root {
+  margin-top: 4rem;
 }
 
 .container {
   width: 1280px;
   margin: 0 auto;
   padding: 0 1rem;
+}
+.appbar-wrapper {
+  width: 1280px;
+  margin: 0 auto;
+  padding: 0 1rem !important;
 }
 
 .dm-serif-text-regular {
@@ -78,7 +84,8 @@
 }
 
 @media only screen and (max-width: 786px) {
-  .container {
+  .container,
+  .appbar-wrapper {
     width: 100%;
     margin: 0;
   }

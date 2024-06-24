@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 import AppContext from "./AppContext";
+
 const AppContextProvider = ({ children }) => {
   const [query, setQuery] = useState({ q: "banjara hills" });
   const [timesOfDay, setTimesOfDay] = useState("night");

@@ -18,18 +18,17 @@ export default function NavBar(props) {
     <>
       <CssBaseline />
       <AppBar>
-        <Toolbar>
-          <div className="container">
-            <Stack
-              justifyContent="space-between"
-              alignItems="center"
-              direction="row"
-              spacing={2}
-            >
-              <Logo />
-              <CurrentTime weather={props.weather} />
-            </Stack>
-          </div>
+        <Toolbar className="appbar-wrapper">
+          <Stack
+            justifyContent="space-between"
+            alignItems="center"
+            direction="row"
+            // spacing={2}
+            width="100%"
+          >
+            <Logo />
+            <CurrentTime weather={props.weather} />
+          </Stack>
         </Toolbar>
       </AppBar>
       <Toolbar />
