@@ -10,10 +10,9 @@ import "swiper/css/pagination";
 // import required modules
 import { FreeMode, Pagination } from "swiper/modules";
 
-import CommonCard from "../CommonCard/CommonCard";
-import DailyCard from "../DailyCard/DailyCard";
+import DailyCard_XS from "../DailyCard_XS/DailyCard_XS";
 
-function DailyWeather({ weather: { temp, icon, daily } }) {
+function DailyWeather_XS({ weather: { daily } }) {
   // console.log("dataaaaa:", data);
   return (
     <>
@@ -30,7 +29,7 @@ function DailyWeather({ weather: { temp, icon, daily } }) {
       >
         {daily.map((day) => (
           <SwiperSlide key={day.title}>
-            <DailyCard
+            <DailyCard_XS
               day={day.title}
               icon={day.icon}
               temp={`${day.temp.toFixed()}` + "°"}
@@ -42,4 +41,4 @@ function DailyWeather({ weather: { temp, icon, daily } }) {
   );
 }
 
-export default DailyWeather;
+export default DailyWeather_XS;

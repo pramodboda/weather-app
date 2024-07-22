@@ -12,7 +12,7 @@ const CardContentNoPadding = styled(CardContent)(`&:last-child{
   padding-bottom:16px;
 }`);
 
-export default function DailyCard(props) {
+export default function DailyCard_XS(props) {
   return (
     <>
       <Box textAlign="center">

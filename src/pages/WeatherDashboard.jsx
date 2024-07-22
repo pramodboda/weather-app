@@ -15,7 +15,7 @@ import CommonCard from "../components/CommonCard/CommonCard";
 import WindCard from "../components/Wind/WindCard.jsx";
 import SunriseAndSunset from "../components/Cards/SunriseAndSunset/SunriseAndSunset.jsx";
 // import DailyCard from "../components/DailyCard/DailyCard";
-import DailyWeather from "../components/DailyWeather/DailyWeather";
+// import DailyWeather from "../components/DailyWeather/DailyWeather";
 
 import Footer from "../components/Footer/Footer";
 
@@ -51,7 +51,7 @@ export default function WeatherDashboard() {
           {weather && (
             <Grid container item spacing={2}>
               <Grid item xs={12} sm={12}>
-                <Box
+                {/* <Box
                   width="100%"
                   display="flex"
                   justifyContent="space-between"
@@ -66,7 +66,7 @@ export default function WeatherDashboard() {
                   <Typography variant="body2">Morning</Typography>
                   <Typography variant="body2">Evening</Typography>
                   <Typography variant="body2">Night</Typography>
-                </Box>
+                </Box> */}
               </Grid>
               <Grid item xs={12} sm={12}>
                 <NavBar weather={weather} />
@@ -91,14 +91,14 @@ export default function WeatherDashboard() {
               <Grid item xs={12} sm={9}>
                 <Grid container item spacing={2}>
                   <Grid item xs={12} sm={12}>
-                    <Typography
+                    {/* <Typography
                       variant="h6"
                       color="text.secondary"
                       gutterBottom
                     >
                       Daily forecast
                     </Typography>
-                    <DailyWeather weather={weather} />
+                    <DailyWeather weather={weather} /> */}
                   </Grid>
                   <Grid item xs={12} sm={3}>
                     <CommonCard
