@@ -25,6 +25,8 @@ import BGVid from "../components/BGVid/BGVid";
 import getFormattedWeatherData from "../services/api/weatherService.js";
 import SearchForm from "../components/SearchForm/SearchForm.jsx";
 
+import UVIndexCanvas from "../components/UVIndexCanvas/UVIndexCanvas.jsx";
+
 export default function WeatherDashboard() {
   const { query, setQuery, units, weather, setWeather } = useAppContext();
 
@@ -117,6 +119,7 @@ export default function WeatherDashboard() {
                       value="8"
                       msg="well meaning and kindly. a benevolent smile"
                     />
+                    <UVIndexCanvas />
                   </Grid>
                   <Grid item xs={6} sm={3}>
                     <CommonCard
