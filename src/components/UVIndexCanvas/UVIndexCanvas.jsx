@@ -30,7 +30,7 @@ function UVIndexCanvas() {
     }
 
     // Draw the sharp, narrow needle pointing to number 6
-    const needleAngle = startAngle + 5.8 * step; // Adjust for zero-based index
+    const needleAngle = startAngle + 6.8 * step; // Adjust for zero-based index
     const needleX = centerX + radius * Math.cos(needleAngle);
     const needleY = centerY + radius * Math.sin(needleAngle);
 
@@ -41,7 +41,7 @@ function UVIndexCanvas() {
     ctx.strokeStyle = "#f9f9f9"; // Optional: Change the color of the needle
     ctx.stroke();
   });
-  return <canvas ref={ref} id="myCanvas" width="250" height="150"></canvas>;
+  return <canvas ref={ref} id="myCanvas" width="280" height="150"></canvas>;
 }
 
 export default UVIndexCanvas;
