@@ -1,9 +1,28 @@
 #root {
+  margin-top: 4rem;
 }
 
 .container {
-  max-width: 1280px;
+  width: 1280px;
   margin: 0 auto;
+  padding: 0 1rem;
+}
+.appbar-wrapper {
+  width: 1280px;
+  margin: 0 auto;
+  padding: 0 1rem !important;
+}
+
+.dm-serif-text-regular {
+  font-family: "DM Serif Text", serif !important;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.dm-serif-text-regular-italic {
+  font-family: "DM Serif Text", serif;
+  font-weight: 400;
+  font-style: italic;
 }
 
 /* Style the video: 100% width and height to cover the entire window */
@@ -15,6 +34,10 @@
   top: 0;
   left: 0;
   z-index: -1;
+
+  filter: blur(0.05rem);
+  filter: brightness(40%);
+  /* border: 1px solid red; */
 }
 
 .weather-dashboard {
@@ -26,12 +49,14 @@
   margin-top: 2rem;
 }
 /* ========== common-card ========== */
+
 .common-card .MuiCardContent-root {
   min-height: 10rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
+
 .card-title {
   text-transform: uppercase;
   font-size: 0.8rem !important;
@@ -51,4 +76,17 @@
   font-size: 2rem;
   position: absolute;
   top: 0.8rem;
+}
+
+/* footer */
+.footer a {
+  color: #f9f9f9;
+}
+
+@media only screen and (max-width: 786px) {
+  .container,
+  .appbar-wrapper {
+    width: 100%;
+    margin: 0;
+  }
 }
